@@ -1,0 +1,219 @@
+/* =========================== */
+/*      RESETEO GENERAL        */
+/* =========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+/* =========================== */
+/*          NAVBAR             */
+/* =========================== */
+
+.imagenNavegador {
+  width: 100px;
+}
+
+.cabeza {
+  background-color: #535864;
+}
+
+.comprarTickets {
+  color: rgb(52, 155, 72);
+}
+
+/* =========================== */
+/*          CAROUSEL           */
+/* =========================== */
+
+.imagenCarousel {
+  filter: brightness(50%);
+}
+
+.textoCarosel {
+  text-align: right;
+  margin: 0px;
+}
+
+.margenBotones {
+  margin-right: 10px;
+}
+
+.textoCaroselMargen {
+  margin-bottom: 100px;
+}
+
+.carousel {
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* =========================== */
+/*       BREAKPOINTS           */
+/* =========================== */
+
+@media screen and (max-width: 725px) {
+  .textoCarosel {
+    font-size: 10px;
+  }
+
+  .textoCaroselMargen {
+    margin: 0px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .textoCarosel {
+    font-size: 6px;
+  }
+}
+
+/* =========================== */
+/*      TITULOS ORADORES       */
+/* =========================== */
+
+.tituloPrincipal {
+  font-size: medium;
+}
+
+.tituloSecundario {
+  font-size: 40px;
+}
+
+/* =========================== */
+/*       SECCIÓN PLAYA         */
+/* =========================== */
+
+.imagenPlaya {
+  display: flex;
+  flex-direction: row;
+}
+
+.imagenPlaya img {
+  max-width: 100%;
+}
+
+.imagenPlayaPrincipal {
+  width: 70%;
+}
+
+@media screen and (max-width: 600px) {
+  .imagenPlaya {
+    flex-direction: column;
+  }
+
+  .imagenPlayaPrincipal {
+    width: 100%;
+  }
+}
+
+.fondoPlaya {
+  background-color: rgb(51, 51, 51);
+}
+
+.textoPlaya {
+  margin: 0px 0px 0px 10px;
+  font-size: small;
+}
+
+/* =========================== */
+/*          FOOTER             */
+/* =========================== */
+
+.pie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: rgb(29, 73, 98);
+  height: 100px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.pieDecoracion {
+  text-decoration: none;
+  color: white;
+  list-style: none;
+}
+
+@media screen and (max-width: 870px) {
+  .pie {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* =========================== */
+/*     RESPONSIVE 320px        */
+/* =========================== */
+
+@media screen and (max-width: 320px) {
+
+  /* Carrusel */
+  .textoCarosel {
+    font-size: 8px;
+    text-align: center;
+  }
+
+  .textoCaroselMargen {
+    margin-bottom: 10px;
+  }
+
+  .margenBotones {
+    margin-right: 5px;
+  }
+
+  /* Playa */
+  .imagenPlayaPrincipal {
+    width: 100%;
+  }
+
+  .fondoPlaya {
+    padding: 10px;
+  }
+
+  .textoPlaya {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  /* Tipografías generales */
+  h1, h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .tituloSecundario {
+    font-size: 28px;
+  }
+
+  /* Navbar */
+  .navbar-brand img {
+    width: 70px;
+  }
+
+  .navbar-brand {
+    font-size: 14px;
+  }
+
+  /* Footer */
+  .pie {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+    gap: 6px;
+  }
+}
