@@ -1,10 +1,8 @@
-/* =========================== */
-/*      RESETEO GENERAL        */
-/* =========================== */
-
+/* === RESET === */
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html, body {
@@ -15,205 +13,118 @@ body {
   scroll-behavior: smooth;
 }
 
-/* =========================== */
-/*          NAVBAR             */
-/* =========================== */
+/* === NAVBAR === */
+.imagenNavegador { width: 100px; }
+.cabeza { background-color: #535864; }
+.comprarTickets { color: rgb(52,155,72); }
 
-.imagenNavegador {
-  width: 100px;
+/* === CAROUSEL === */
+.imagenCarousel { filter: brightness(50%); }
+
+.carousel-caption {
+  left: 0 !important;
+  right: 0 !important;
+  width: 100%;
+  padding: 0 10px !important;
+  text-align: center !important;
 }
 
-.cabeza {
-  background-color: #535864;
+.textoCarosel { text-align: right; margin: 0; }
+.margenBotones { margin-right: 10px; }
+.textoCaroselMargen { margin-bottom: 100px; }
+
+.carousel { overflow: hidden; }
+.carousel-inner { display: flex; transition: transform 0.5s ease; }
+
+/* === BREAKPOINTS === */
+@media (max-width: 725px) {
+  .textoCarosel { font-size: 10px; }
+  .textoCaroselMargen { margin: 0; }
 }
 
-.comprarTickets {
-  color: rgb(52, 155, 72);
+@media (max-width: 450px) {
+  .textoCarosel { font-size: 6px; }
 }
 
-/* =========================== */
-/*          CAROUSEL           */
-/* =========================== */
+/* === TITULOS === */
+.tituloPrincipal { font-size: medium; }
+.tituloSecundario { font-size: 40px; }
 
-.imagenCarousel {
-  filter: brightness(50%);
-}
-
-.textoCarosel {
-  text-align: right;
-  margin: 0px;
-}
-
-.margenBotones {
-  margin-right: 10px;
-}
-
-.textoCaroselMargen {
-  margin-bottom: 100px;
-}
-
-.carousel {
-  overflow: hidden;
-}
-
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-/* =========================== */
-/*       BREAKPOINTS           */
-/* =========================== */
-
-@media screen and (max-width: 725px) {
-  .textoCarosel {
-    font-size: 10px;
-  }
-
-  .textoCaroselMargen {
-    margin: 0px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .textoCarosel {
-    font-size: 6px;
-  }
-}
-
-/* =========================== */
-/*      TITULOS ORADORES       */
-/* =========================== */
-
-.tituloPrincipal {
-  font-size: medium;
-}
-
-.tituloSecundario {
-  font-size: 40px;
-}
-
-/* =========================== */
-/*       SECCIÓN PLAYA         */
-/* =========================== */
-
+/* === SECCION PLAYA === */
 .imagenPlaya {
+  width: 100%;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 .imagenPlaya img {
   max-width: 100%;
+  display: block;
 }
 
-.imagenPlayaPrincipal {
-  width: 70%;
+.imagenPlayaPrincipal { width: 70%; }
+
+@media (max-width: 600px) {
+  .imagenPlaya { flex-direction: column; }
+  .imagenPlayaPrincipal { width: 100%; }
 }
 
-@media screen and (max-width: 600px) {
-  .imagenPlaya {
-    flex-direction: column;
-  }
+.fondoPlaya { background-color: #333; }
 
-  .imagenPlayaPrincipal {
-    width: 100%;
-  }
-}
+.textoPlaya { margin-left: 10px; font-size: small; }
 
-.fondoPlaya {
-  background-color: rgb(51, 51, 51);
-}
-
-.textoPlaya {
-  margin: 0px 0px 0px 10px;
-  font-size: small;
-}
-
-/* =========================== */
-/*          FOOTER             */
-/* =========================== */
-
+/* === FOOTER === */
 .pie {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-color: rgb(29, 73, 98);
-  height: 100px;
+  background-color: rgb(29,73,98);
+  height: auto;
   align-items: center;
   margin-top: 30px;
+  padding: 10px 0 !important;
 }
 
-.pieDecoracion {
-  text-decoration: none;
-  color: white;
-  list-style: none;
+.pie li { list-style: none; }
+.pieDecoracion { text-decoration: none; color: white; }
+
+@media (max-width: 870px) {
+  .pie { flex-direction: column; gap: 8px; }
 }
 
-@media screen and (max-width: 870px) {
-  .pie {
-    flex-direction: column;
-    align-items: center;
-  }
+/* === 320px === */
+@media (max-width: 320px) {
+  .textoCarosel { font-size: 8px; text-align: center; }
+  .textoCaroselMargen { margin-bottom: 10px; }
+  .margenBotones { margin-right: 5px; }
+  .imagenPlayaPrincipal { width: 100%; }
+  .textoPlaya { font-size: 12px; margin-left: 5px; }
+
+  h1, h2 { font-size: 20px; text-align: center; }
+  .tituloSecundario { font-size: 28px; }
+
+  .navbar-brand img { width: 70px; }
+  .navbar-brand { font-size: 14px; }
+
+  .pie { gap: 6px; }
 }
 
-/* =========================== */
-/*     RESPONSIVE 320px        */
-/* =========================== */
+/* Evitar superposición del texto del carrusel con los indicadores */
+.carousel-caption {
+  bottom: 80px !important; /* Subimos el texto */
+}
 
-@media screen and (max-width: 320px) {
-
-  /* Carrusel */
-  .textoCarosel {
-    font-size: 8px;
-    text-align: center;
+/* En móviles bajamos los indicadores y subimos más el texto */
+@media (max-width: 576px) {
+  .carousel-caption {
+    bottom: 110px !important;
   }
 
-  .textoCaroselMargen {
-    margin-bottom: 10px;
+  .carousel-indicators {
+    bottom: 10px !important; /* los bajamos */
   }
-
-  .margenBotones {
-    margin-right: 5px;
-  }
-
-  /* Playa */
-  .imagenPlayaPrincipal {
-    width: 100%;
-  }
-
-  .fondoPlaya {
-    padding: 10px;
-  }
-
-  .textoPlaya {
-    font-size: 12px;
-    margin-left: 5px;
-  }
-
-  /* Tipografías generales */
-  h1, h2 {
-    font-size: 20px;
-    text-align: center;
-  }
-
-  .tituloSecundario {
-    font-size: 28px;
-  }
-
-  /* Navbar */
-  .navbar-brand img {
-    width: 70px;
-  }
-
-  .navbar-brand {
-    font-size: 14px;
-  }
-
-  /* Footer */
-  .pie {
-    flex-direction: column;
-    height: auto;
-    padding: 15px 0;
-    gap: 6px;
-  }
+}
+.carousel-indicators {
+  bottom: 40px !important; /* Subimos los indicadores */
 }
